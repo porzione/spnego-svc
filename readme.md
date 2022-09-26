@@ -9,7 +9,7 @@ used go packages <https://github.com/jcmturner/gokrb5>
 ### easy way without compilation
 
 ```text
-go run main.go -debug -realm REALM.MY -user HTTP -config /etc/krb5.conf -user HTTP -domain active-namenode.domain.my -keytab ~/tmp/HTTP.keytab
+go run main.go -debug -realm REALM.MY -user HTTP -config /etc/krb5.conf -domain active-namenode.domain.my -keytab ~/tmp/HTTP.keytab
 ```
 
 ### run with https/tls
@@ -17,7 +17,7 @@ go run main.go -debug -realm REALM.MY -user HTTP -config /etc/krb5.conf -user HT
 Add command line options for private key and certificate paths, the service with listen for TLS:
 
 ```text
-go run main.go -debug -realm REALM.MY -user HTTP -config /etc/krb5.conf -user HTTP -domain active-namenode.domain.my -keytab ~/tmp/HTTP.keytab -tls_key server.key -tls_crt server.crt
+go run main.go -debug -realm REALM.MY -user HTTP -config /etc/krb5.conf -domain active-namenode.domain.my -keytab ~/tmp/HTTP.keytab -tls_key server.key -tls_crt server.crt
 ```
 
 For testing purposes there is simple script `mksstls` for generating self signed pair.
