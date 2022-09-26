@@ -1,0 +1,5 @@
+spnego-svc*
+server.crt
+server.key
+auth
+

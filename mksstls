@@ -1,0 +1,14 @@
+openssl req \
+    -newkey rsa:3072 \
+    -x509 \
+    -nodes \
+    -keyout server.key \
+    -new \
+    -out server.crt \
+    -subj /CN=domain.my \
+    -reqexts SAN \
+    -extensions SAN \
+    -config <(cat /etc/ssl/openssl.cnf \
+        <(printf '[SAN]\nsubjectAltName=DNS:*.domain.my')) \
+    -sha384 \
+    -days 3650
