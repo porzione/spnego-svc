@@ -151,7 +151,7 @@ func main() {
 			logger.Printf("Token: %v", token)
 		}
 		w.Header().Set("Authenticated-User", user)
-		fmt.Fprintln(w, token)
+		fmt.Fprint(w, token)
 	}
 
 	http.HandleFunc("/ktoken", ktoken)
